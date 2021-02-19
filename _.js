@@ -19,6 +19,15 @@ const _ = {
     words(str){
       const words = str.split(' ');
       return words;
+    },
+    pad(str, length){
+      if (str.length >= length){
+        return str
+      };
+      const startPaddingLength = Math.floor((length - str.length)/2);
+      const endPaddingLength = length - str.length - startPaddingLength;
+      const paddedString = ' '.repeat(startPaddingLength) + str + ' '.repeat(endPaddingLength);
+      return paddedString;
     }
   };
 
